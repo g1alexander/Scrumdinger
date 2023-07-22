@@ -33,7 +33,7 @@ struct ScrumsView: View {
 struct ScrumsView_Previews: PreviewProvider {
     // preview with interactive UI
     struct Container: View {
-        @State var data = DailyScrum.sampleDate
+        @State var data = DailyScrum.sampleData
         
         var body: some View {
            ScrumsView(scrums: $data)
