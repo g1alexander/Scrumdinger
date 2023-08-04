@@ -58,24 +58,7 @@ struct DetailView: View {
             .accessibilityLabel("Edit Scrum")
         }
         .sheet(isPresented: $isPresentingEditView){
-            NavigationStack {
-                DetailEditView(scrum: $editingScrum)
-                    .navigationTitle(scrum.title)
-                    .toolbar {
-                        ToolbarItem(placement: .cancellationAction){
-                            Button("Cancel") {
-                                isPresentingEditView = false
-                            }
-                        }
-                        ToolbarItem(placement: .confirmationAction){
-                            Button("Done") {
-                                isPresentingEditView = false
-                                scrum = editingScrum
-                            }
-                        }
-                    }
-            }
-            
+           EditScrumSheet(isPresentingEditView: $isPresentingEditView, scrum: $scrum, editingScrum: $editingScrum)
         }
     }
 }
