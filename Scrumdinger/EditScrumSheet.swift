@@ -13,7 +13,7 @@ struct EditScrumSheet: View {
     @Binding var editingScrum: DailyScrum
     
     var body: some View {
-        NavigationStack {
+        Navigation {
             DetailEditView(scrum: $editingScrum)
                 .navigationTitle(scrum.title)
                 .toolbar {
